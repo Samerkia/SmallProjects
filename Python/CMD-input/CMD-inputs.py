@@ -1,7 +1,5 @@
 import sys
 from getopt import *
-from unittest.mock import DEFAULT
-
 
 def Program_Help():
     print("""
