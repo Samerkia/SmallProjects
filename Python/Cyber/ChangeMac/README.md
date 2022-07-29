@@ -14,7 +14,7 @@ This is a python script that changes the MAC Address of a given inteface.
     
     """
 ```
-## prerequisite 
+## Prerequisite 
 This script doesn't work on Windows or Widows based OS's.
 It will work fine for more Linux based OS's.
 ## Created by Nick Raffel
