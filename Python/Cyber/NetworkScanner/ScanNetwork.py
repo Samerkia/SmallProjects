@@ -47,7 +47,6 @@ def get_arguments():
     return target
 
 def scan(ip):
-    
     # Generates the ARP Request
     arp_request = scapy.ARP(pdst=ip) 
     # sets the destination MAC to the broadcast MAC dst = mac destination
@@ -80,6 +79,11 @@ except UnboundLocalError:
     sys.exit(Program_Help())
 
 # Scan result from scanning network
-scan_result = scan(target)
+try:
+    scan_result = scan(target)
+except OSError as e:
+    print(color(255,0,0,"ERROR: Did you run the command as a sudoer?"), e)
+    sys.exit(Program_Help())
+
 # Prints the results captured from above
 print_result(scan_result)

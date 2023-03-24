@@ -87,5 +87,5 @@ current_mac = get_current_mac(interface)
 if current_mac == mac_addr:
     print(color(0,255,0,"[+] MAC Address successfully changed to:") + mac_addr)
 else:
-    print(color(255,0,0,"[-] MAC Address did not change"))
+    print(color(255,0,0,"[-] MAC Address did not change\nPossible issue: Do you need to run the command as a sudoer? "))
     
