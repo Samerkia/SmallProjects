@@ -30,7 +30,6 @@ def get_arguments():
         print (color(255,0,0,"ERROR: Wrong option used --> "), e)
         sys.exit(Program_Help())
     
-    
     #Checks if the options where provided
     if options:
         for (opt, args) in options[0]:
