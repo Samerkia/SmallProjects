@@ -13,16 +13,17 @@ using namespace std;
 // Simple Help message of how the program works
 string ProgramHelp()
 {
-    return "Usage:      :   ./CLIinputs [-c <count>] [-t <text>]\n\n" 
+    return "Usage:                :   ./CLIinputs [-c <count>] [-t <text>]\n\n"
            "Options:\n"
            "-h or --help:         :   Optional: Shows options and how to use them!\n\n"
 
-           "-c or --count:         :   Optional: Amount of times to print\n"
-           "                ./CLIinput -c 5\n\n"
+           "-c or --count:        :   Optional: Amount of times to print\n"
+           "                          ./CLIinput -c 5\n\n"
 
-           "-t:         :   Optional: The text to print\n"
-           "                ./CLIinput -t \"Hello World!\"\n"
-           "Combined    :   ./CLIinput -t \"Hello World!\" -c 5";
+           "-t or --text          :   Optional: The text to print\n"
+           "                          ./CLIinput -t \"Hello World!\"\n\n"
+                                      
+           "Combined              :   ./CLIinput -t \"Hello World!\" -c 5";
 }
 
 // Function that gets the arguments given
