@@ -1,6 +1,5 @@
 /*
-    @copyright Nick Raffel
-    I made this mostly to just show 
+    I made this mostly to just show off how CLI arguments work in C/C++
 */
 
 #include <unistd.h>
@@ -11,6 +10,7 @@
 
 using namespace std;
 
+// Simple Help message of how the program works
 string ProgramHelp()
 {
     return "Usage:      :   ./CLIinputs [-c <count>] [-t <text>]\n\n" 
@@ -25,13 +25,16 @@ string ProgramHelp()
            "Combined    :   ./CLIinput -t \"Hello World!\" -c 5";
 }
 
+// Function that gets the arguments given
 void getArguments(int argc, char** argv)
 {
-    int c;
-    int count = 1; // default value
-    string text = "Hello"; // default value
+    int c; // var to check if arguments existed
+    int count = 1; // default count value
+    string text = "Hello"; // default text value
 
+    // short options -c -t -h
     const char* const short_opts = "hc:t:";
+    // Long Options 
     const option long_opts[] = {
         {"help", no_argument, nullptr, 'h'},
         {"count", required_argument, nullptr, 'c'},
@@ -39,7 +42,8 @@ void getArguments(int argc, char** argv)
         {0,0,0,0}
     };
 
-    // parse command line arguments using getopt
+    // parse the commands given in the CLI
+    // while there are commands to be read
     while ((c = getopt_long(argc, argv, short_opts, long_opts, nullptr)) != -1) {
         switch (c) {
         case 'c':
@@ -55,7 +59,7 @@ void getArguments(int argc, char** argv)
         }
     }
 
-    // print the given string count times
+    // print the given string the amount of times count was set to 
     for (int i = 0; i < count; i++) {
         cout << text << endl;
     }
