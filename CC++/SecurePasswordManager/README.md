@@ -1,5 +1,5 @@
 # Secure Password Manager
-This is a simple C/C++ program that shows a simple way (maybe also not the most secure, but that may be coming later ;)
+This is a simple C/C++ program that shows a simple way, which may not be the most secure, but that may be coming later ;)
 to save and store your passwords on your machine!
 
 # Planned Updates
