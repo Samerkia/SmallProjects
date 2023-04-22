@@ -8,4 +8,4 @@ to save and store your passwords on your machine!
 
 
 # Planned Updates
-1. The encryption and decryption will utilize the special code and use that as their key
+1. Improve the encryption and decryption algorithmes so that they will utilize the special code and use that as their key
