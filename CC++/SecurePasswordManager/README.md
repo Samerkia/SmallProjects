@@ -8,4 +8,5 @@ to save and store your passwords on your machine!
 
 
 # Planned Updates
-1. Improve the encryption and decryption algorithmes so that they will utilize the special code and use that as their key
+1. Improve the encryption and decryption algorithms so that they will utilize the special code and use that as their key
+2. LAN Password storing. IE: If the user has a raspberry pi, they can have the passwords saved/stored there too as a backup
