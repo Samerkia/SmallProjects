@@ -17,7 +17,7 @@ static const char alphanum[] =
 "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 "abcdefghijklmnopqrstuvwxyz";
 
-string Encrypt(string s, string& code);
-string Decrypt(string s, string& code);
+string Encrypt(const string& s, string& code);
+string Decrypt(const string& s, string& code);
 
 #endif

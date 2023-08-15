@@ -1,15 +1,17 @@
 #include "header.h"
 
-string Encrypt(string s, string& code) {
-    for (int i = 0; i < s.size(); i ++) {
-        s[i]++;
+string Encrypt(const string& s, string& code) {
+    std::string encryptedMessage = s;
+    for (size_t i = 0; i < s.length(); ++i) {
+        encryptedMessage[i] = (s[i] + code[i % code.length()]) % 128; // Using ASCII range
     }
-    return s;
+    return encryptedMessage;
 }
 
-string Decrypt(string s, string& code) {
-    for (int i = 0; i < s.size(); i ++) {
-        s[i]--;
+string Decrypt(const string& s, string& code) {
+    std::string decryptedMessage = s;
+    for (size_t i = 0; i < s.length(); ++i) {
+        decryptedMessage[i] = (s[i] - code[i % code.length()] + 128) % 128; // Using ASCII range
     }
-    return s;
+    return decryptedMessage;
 }
