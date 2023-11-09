@@ -10,3 +10,7 @@ to save and store your passwords on your machine!
 # Planned Updates
 1. Improve the encryption and decryption algorithms so that they will utilize the special code and use that as their key
 2. LAN Password storing. IE: If the user has a raspberry pi, they can have the passwords saved/stored there too as a backup
+
+
+## Updates
+July 29th: Minor Changes, just made it more Object Oriented. I didn't really NEED to do this, however it makes it nicer to reuse the encryption code if needed later on
