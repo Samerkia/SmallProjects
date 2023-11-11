@@ -2,6 +2,7 @@
 import sys
 from getopt import *
 
+#Program help
 def Program_Help():
     print("""
     Usage/Help page for the program : CMD-inputs.py
@@ -47,6 +48,19 @@ def getPasswords(passwordFile):
     except FileNotFoundError as e:
         sys.exit("[-] ERROR:\tPossible that no File was specified or not found.\n\t\tUse -h or --help for help!\n")
 
+def crackPassword(password):
+    rp = "special"
+    if password == rp:
+        print(f"{password:<{20}} is a match. Password found!")
+        exit()
+    else:
+        print(f"{password:<{20}} was NOT a match!")
+
+def printResults():
+    print(f"{'Password':<{20}} Status")
+    print("--------------------------------------")
+    for password in passwords: crackPassword(password)
+
 filename = get_arguments()
 passwords = getPasswords(filename)
-for password in passwords: print(password)
+printResults()
