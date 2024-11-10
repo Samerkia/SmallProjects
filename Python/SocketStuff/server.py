@@ -26,6 +26,16 @@ def color(r=None, g=None, b=None, text=None, col=None):
     else:
         return text  # Default return of plain text if inputs are missing
 
+def printHelp():
+    # I hate how this is formatted... I will figure out something better later it's a low priority thing anyways
+    print(f"{color(col='yellow', text='exit / end connection')} {'--> Suppose to simply end the server communication side only [Not fully working as intended yet]'}")
+    print(f"{color(col='yellow', text='disconnect / terminate')} {'-> Closes the connection between server and client (NOTE: Client will need to restart unfortunately [Can be useful though])'}")
+    print(f"{color(col='yellow', text='upload')} {'-----------------> Upload a file to client'}")
+    print(f"{color(col='yellow', text='download')} {'---------------> Download a file from the client'}")
+    print(f"{color(col='yellow', text='help')} {'-------------------> Shows this dialogue'}")
+    print("______________________________________________________________________________________________________________________________________________________________")
+    print(f"{color(col='yellow', text='NOTE: ')} {'You also have your othe basic shell commands like ls, dir, cd, etc'}")
+
 def createServerSocket(host='127.0.0.1', port=12345):
     # Create and bind a server socket.
     servSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -107,6 +117,7 @@ def handleClient(clientSocket, address):
     try:
         while True:
             message = input(">> ")
+            if message.lower() in ["help"]: printHelp()
             if message.lower() in ["exit", "end connection"]: raise KeyboardInterrupt
             if message.lower() in ["disconnect", "terminate"]:  
                 print(f"{color(col='yellow', text='Terminating connection and Server...')}") 

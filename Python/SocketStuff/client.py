@@ -135,13 +135,16 @@ def processData(data, clientSocket):
         handleCDCommand(data, clientSocket)
         return False  # Continue the loop
     
+    if data.lower().startswith("help"): 
+        return False
+    
     try:
         # Run the command and capture output
         result = subprocess.run(data.split(), capture_output=True, text=True, timeout=30)  # Timeout of 5 seconds
 
         # Check for errors
         if result.returncode != 0:
-            output = f"Error executing command: {result.stderr}"
+            output = f"{color(col='red', text='Error executing command:')} {data} {result.stderr}"
         else:
             output = result.stdout
 
